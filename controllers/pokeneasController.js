@@ -1,9 +1,14 @@
 const POKENEAS = require('../data/pokeneasData');
+const os = require("os")
 
 const getPokenea = (req, res) => {
     const randomIndex = Math.floor(Math.random() * POKENEAS.length);
-    const pokenea = POKENEAS[randomIndex];
-    res.render('pokenea', { pokenea });
+    const host = os.hostname();
+    const viewData = {
+        ...POKENEAS[randomIndex],
+        host
+    }
+    res.render('pokenea', { viewData });
 };
 
 const getAllPokeneas = (req, res) => {

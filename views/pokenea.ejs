@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= pokenea.nombre %></title>
+    <title><%= viewData.nombre %></title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     <div class="main-container">
-        <h1><%= pokenea.nombre %></h1>
-        <img src="<%= pokenea.imagen %>" alt="<%= pokenea.nombre %>">
-        <p>"<%= pokenea.frase %>"</p>
+        <h1><%= viewData.nombre %></h1>
+        <img src="<%= viewData.imagen %>" alt="<%= viewData.nombre %>">
+        <p>"<%= viewData.frase %>"</p>
+        <p class="host-id">
+            Container Id: <%= viewData.host %>
+        </p>
     </div>
 </body>
 </html>
